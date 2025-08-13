@@ -1,0 +1,65 @@
+body {
+  background: #0b0f1a;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.carousel {
+  width: 700px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel > .slides-container {
+  display: flex;
+}
+
+.slides-container .slide {
+  flex: 0 0 100%;
+}
+
+.carousel > .arrow-btn {
+  top: 50%;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #c0c6d6;
+  position: absolute;
+  background: #5d3fd3;
+  transform: translateY(-50%);
+}
+
+.carousel > .arrow-btn:hover {
+  background: #2e8b8b;
+}
+
+.arrow-btn.next {
+  right: 0;
+}
+
+.navigation-circles {
+  width: 100%;
+  bottom: 15px;
+  text-align: center;
+  position: absolute;
+}
+
+.navigation-circles > span {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  margin: 0 0.4rem;
+  border-radius: 50%;
+  background: #5d3fd3;
+  display: inline-block;
+}
+
+.navigation-circles > span.active {
+  background: #d4af37;
+  transform: scale(1.2);
+}
