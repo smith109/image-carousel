@@ -26,5 +26,11 @@ const createSlideShow = (carousel) => {
     updateCarousel(nextIndex);
   };
 
-  return { updateCarousel, getNextSlide };
+  const getPreviousSlide = () => {
+    const endSlideIndex = totalSlides - 1;
+    let previousIndex = currentIndex - 1 < 0 ? endSlideIndex : currentIndex - 1;
+    updateCarousel(previousIndex);
+  };
+
+  return { updateCarousel, getNextSlide, getPreviousSlide };
 };
