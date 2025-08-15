@@ -3,6 +3,7 @@ const createSlideShow = (carousel) => {
   const slidesContainer = carousel.querySelector('.slides-container');
   const slidesNodeList = carousel.querySelectorAll('.slide');
   const totalSlides = slidesNodeList.length;
+  let autoSlideInterval;
   let currentIndex = 0;
 
   const setActiveNavCircle = (index) => {
@@ -32,5 +33,20 @@ const createSlideShow = (carousel) => {
     updateCarousel(previousIndex);
   };
 
-  return { updateCarousel, getNextSlide, getPreviousSlide };
+  const startAutoSlide = () => {
+    autoSlideInterval = setInterval(getNextSlide, 5000);
+  };
+
+  const resetAutoSlide = () => {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  };
+
+  return {
+    updateCarousel,
+    getNextSlide,
+    getPreviousSlide,
+    startAutoSlide,
+    resetAutoSlide,
+  };
 };
