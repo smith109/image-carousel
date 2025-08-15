@@ -21,5 +21,10 @@ const createSlideShow = (carousel) => {
     currentIndex = index;
   };
 
-  return { updateCarousel };
+  const getNextSlide = () => {
+    let nextIndex = currentIndex + 1 >= totalSlides ? 0 : currentIndex + 1;
+    updateCarousel(nextIndex);
+  };
+
+  return { updateCarousel, getNextSlide };
 };
