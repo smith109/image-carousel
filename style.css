@@ -9,7 +9,7 @@ img {
 
 .carousel {
   width: 700px;
-  margin: auto;
+  margin: 7rem auto;
   overflow: hidden;
   position: relative;
 }
